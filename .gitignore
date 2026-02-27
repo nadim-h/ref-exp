@@ -17,15 +17,6 @@ pom.xml.asc
 .lsp/
 *_tasks.jsonl
 *_tests.jsonl
-*_tst10.jsonl
-*_tst11.jsonl
-*_tst12.jsonl
-*_tst13.jsonl
-*_tst9.jsonl
-*_tst20.jsonl
-*_tst21.jsonl
-*_tst22.jsonl
-*_tst23.jsonl
 .ipynb_checkpoints/
 .calva/
 tables/
