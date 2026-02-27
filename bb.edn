@@ -1,0 +1,8 @@
+{:min-bb-version "1.3.181"
+ :tasks {:init (clojure "-X:deps prep")
+         repl {:task (clojure "-M:dev")
+               :override-builtin true}
+         main {:task (apply clojure "-M:main" *command-line-args*)
+               :override-builtin true}
+         run {:task (apply clojure "-X:exec" *command-line-args*)
+              :override-builtin true}}}

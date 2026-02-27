@@ -1,0 +1,36 @@
+{
+  "description": "Take a Deep Breath Refactoring Template",
+  "prompt_components": [
+    {
+      "name": "Persona",
+      "template": "Act as an expert software engineer specializing in clean, maintainable {snippet_language} code."
+    },
+    {
+      "name": "Task",
+      "key": "code_smell_category",
+      "templates": {
+        "Complex Conditional": "Your task is to fix the '{code_smell_category}' code smell. Apply the 'Decompose Conditional' refactoring by extracting the logic into a descriptively named function or variable.",
+        "Deep, Nested Complexity": "Your task is to fix the '{code_smell_category}' code smell (arrowhead anti-pattern). Apply the 'Extract Function' or 'Replace Conditionals with Guard Clauses' refactoring to flatten the logic.",
+        "Bumpy Road Ahead": "Your task is to fix the '{code_smell_category}' code smell (multiple chunks of nested logic). Apply the 'Extract Function' refactoring to isolate these chunks into cohesive, well-named functions.",
+        "Complex Method": "Your task is to fix the '{code_smell_category}' code smell. Apply the 'Extract Function' or 'Replace Conditionals with Guard Clauses' refactoring to separate distinct logical paths.",
+        "Large Method": "Your task is to fix the '{code_smell_category}' code smell. Identify the single most cohesive block of logic within this function, and apply the 'Extract Function' refactoring to move it into a helper function with a descriptive name."
+      }
+    },
+    {
+      "name": "Constraints",
+      "template": "Follow and remember these rules:\n1. Strictly preserve behavior: The refactored code must produce the exact same results as the original.\n2. Scope: Do not change unrelated logic or formatting.\n3. Language: Ensure valid {snippet_language} syntax. Do not add stubs for existing calls or new functions."
+    },
+    {
+      "name": "Input Code",
+      "template": "Here is the code to refactor:\n```{snippet_language}\n{snippet_code}\n```\n"
+    },
+    {
+      "name": "Take-a-Deep-Breath",
+      "template": "To refactor that function:\nTake a deep breath and work on this problem step-by-step. First, analyze the code and identify the specific code fragment that represents the '{code_smell_category}' code smell. Then, plan the refactoring strategy and sequences of changes to ensure that the behavior is preserved and that the '{code_smell_category}' code smell is remediated."
+    },
+    {
+      "name": "Output Format",
+      "template": "Finally, output the refactored function(s) in a single:\n ```{snippet_language}\nCODE\n```\ncode block.\nIf you extracted helper methods, include them in the same block. Do not include surrounding class wrappers or imports."
+    }
+  ]
+}

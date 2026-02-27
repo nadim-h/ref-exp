@@ -1,0 +1,37 @@
+{:paths ["src"]
+ :deps {org.clojure/clojure {:mvn/version "1.11.1"}
+        org.clojure/tools.cli {:mvn/version "1.0.219"}
+        org.clojure/data.csv {:mvn/version "1.0.1"}
+        org.clojure/data.json {:mvn/version "2.5.0"}
+        org.clojure/tools.logging {:mvn/version "1.3.0"}
+
+        io.github.bonede/tree-sitter {:mvn/version "0.25.3"}
+        io.github.bonede/tree-sitter-java {:mvn/version "0.23.4"}
+        io.github.bonede/tree-sitter-cpp {:mvn/version "0.23.4"}
+        io.github.bonede/tree-sitter-python {:mvn/version "0.23.4"}
+
+        org.babashka/cli {:mvn/version "0.8.65"}
+        babashka/process {:mvn/version "0.6.23"}
+        generateme/fastmath {:mvn/version "2.4.0"}
+
+        clj-http/clj-http {:mvn/version "3.13.1"}
+        cheshire/cheshire {:mvn/version "6.0.0"}
+        progrock/progrock {:mvn/version "1.0.0"}
+        org.clj-commons/claypoole {:mvn/version "1.2.2"}
+        org.hipparchus/hipparchus-stat {:mvn/version "4.0.2"}
+        }
+
+ :aliases {:dev {:extra-deps {nrepl/nrepl {:mvn/version "1.3.1"}
+                              cider/cider-nrepl {:mvn/version "0.55.3"}}
+                 :jvm-opts ["--enable-native-access=ALL-UNNAMED"
+                            "-XX:-OmitStackTraceInFastThrow"
+                            "-Djdk.attach.allowAttachSelf=true"]
+                 :main-opts ["-m" "nrepl.cmdline"
+                             "--middleware" "[cider.nrepl/cider-middleware]" "--interactive"]}
+
+           :main {:jvm-opts ["-Djava.library.path=/usr/local/lib"
+                             "-Dtaoensso.timbre.level=info"
+                             "--enable-native-access=ALL-UNNAMED"]
+                  :main-opts ["-m" "core"]}
+           :exec {:jvm-opts ["--enable-native-access=ALL-UNNAMED"
+                             "-Djdk.attach.allowAttachSelf=true"]}}}
