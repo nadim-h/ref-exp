@@ -25,6 +25,7 @@ def load_data(root_dir):
     for root, _dirs, files in os.walk(root_dir):
         for file in files:
             if not file.endswith('.jsonl'): continue
+            if 'hsp' in file: continue
 
             path_parts = os.path.normpath(root).split(os.sep)
             try:

@@ -87,6 +87,7 @@ def format_simple_val(val, col_name, max_vals, decimals=2, is_int=False):
 def parse_jsonl_file(file_path: Path) -> dict|None:
     model_raw_name = file_path.stem
     model_pretty = get_model_name(model_raw_name)
+    if 'HSP' in model_pretty: return None
 
     data_store = {
         'model': model_pretty,
